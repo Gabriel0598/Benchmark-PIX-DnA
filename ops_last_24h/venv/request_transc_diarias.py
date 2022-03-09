@@ -54,15 +54,3 @@ df.to_csv('.\\sheets\\trans_diarias-trat.csv', mode='w', index=False, header=Tru
 # Modo w realiza sobrescrita dos dados;
 # indica que este arquivo é o tratamento de um anterior;
 print("Arquivo criado com sucesso!")
-
-"""
-DOC - REFERÊNCIA PARA SALVAR ARQUIVO COM DATA (AINDA PASSÍVEL DE TESTE DE SOBRESCRIÇÃO, NÃO UTILIZAR)
-
-import datetime
-data_atual = date.today()
-print(data_atual)
-
-df.to_csv(".\\sheets\\trans_last_24h_" + str(data_atual) + ".csv")  # Armazena o csv em subpasta sheet
-arquivo_csv = pd.read_csv(".\\sheets\\trans_last_24h_" + str(data_atual) + ".csv")
-df.to_csv(".\\sheets\\trans_last_24h_trat_" + str(data_atual) + ".csv", mode='w', index=False, header=True)
-"""
