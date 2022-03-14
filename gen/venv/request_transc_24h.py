@@ -46,15 +46,16 @@ for cadaLinha in arquivo_csv['value']:
     listaQuantidadeMedia.append(dicionario["QuantidadeMedia"])
     listaTotalMedio.append(dicionario["TotalMedio"])
 
-dados = {
+dados =\
+    {
     'Horario': listaHorarios,
     'QuantidadeMedia': listaQuantidadeMedia,
     'TotalMedio': listaTotalMedio
-}
+    }
 
 df = pd.DataFrame(dados)
 # Realiza tratamento das colunas do arquivo:
-df.to_csv(".\\sheets\\trans_last_24h_trat_" + str(data_atual) + ".csv", mode='w', index=False, header=True)
+df.to_csv(".\\sheets\\trans_last_24h_pix_trat_" + str(data_atual) + ".csv", mode='w', index=False, header=True)
 # Arquivos como nome final trat
 # Modo w realiza sobrescrita dos dados/ verificar utilização de modo append para evitar sobrescrição ou variável para data;
 # indica que este arquivo é o tratamento de um anterior;

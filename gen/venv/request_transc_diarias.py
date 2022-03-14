@@ -9,7 +9,7 @@ from datetime import date
 import ast
 
 # URL da API do BACEN - Quantidade e valor total das transações realizadas diariamente desde o primeiro dia de operações;
-from ops_last_24h.venv.request_transc_24h import listaHorarios
+from gen.venv.request_transc_24h import listaHorarios
 
 url = 'https://olinda.bcb.gov.br/olinda/servico/SPI/versao/v1/odata/PixLiquidadosAtual?$top=10000&$orderby=Data%20asc&$format=json&$select=Data,Quantidade,Total'
 request = requests.get(url=url)
@@ -43,11 +43,12 @@ for cadaLinha in arquivo_csv['value']:
     listaQuantidade.append(dicionario["Quantidade"])
     listaTotal.append(dicionario["Total"])
 
-dados = {
+dados =\
+    {
     'Data': listaDatas,
     'Quantidade': listaQuantidade,
     'Total': listaTotal
-}
+    }
 
 df = pd.DataFrame(dados)
 df.to_csv('.\\sheets\\trans_diarias-trat.csv', mode='w', index=False, header=True)  # Arquivos como nome final trat

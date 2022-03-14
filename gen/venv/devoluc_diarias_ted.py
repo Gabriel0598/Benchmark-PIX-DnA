@@ -37,9 +37,11 @@ for cadaLinha in arquivo_csv['value']:
     dicionario = ast.literal_eval(cadaLinha)  # converter string do value para dictionary
     listaDatas.append(dicionario["Data"])
     listaQuantidade.append(dicionario["Quantidade"])
-    listaTotal.append(dicionario["Total"])
+    valorReaisEmMil = float(round(dicionario["Total"] * 1000, 2))
+    listaTotal.append(valorReaisEmMil)
 
-dados = {
+dados = \
+{
     'Data': listaDatas,
     'Quantidade': listaQuantidade,
     'Total': listaTotal
