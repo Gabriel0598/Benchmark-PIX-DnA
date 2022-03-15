@@ -21,10 +21,11 @@ print(data_atual)
 
 # Data frame para leitura do JSON
 df = pd.read_json(url)
-df.to_csv(".\\sheets\\trans_last_24h_" + str(data_atual) + ".csv")  # Armazena o csv em subpasta sheet com data atualizada
+df.to_csv(
+    ".\\sheets\\trans_last_24h_pix_" + str(data_atual) + ".csv")  # Armazena o csv em subpasta sheet com data atualizada
 
 # Variável para receber a planilha semi-estruturada:
-arquivo_csv = pd.read_csv(".\\sheets\\trans_last_24h_" + str(data_atual) + ".csv")
+arquivo_csv = pd.read_csv(".\\sheets\\trans_last_24h_pix_" + str(data_atual) + ".csv")
 print(arquivo_csv.head())  # imprime top 5 linhas do arquivo trans_last_24h.csv
 
 # Exibir as colunas do arquivo importado
@@ -46,11 +47,12 @@ for cadaLinha in arquivo_csv['value']:
     listaQuantidadeMedia.append(dicionario["QuantidadeMedia"])
     listaTotalMedio.append(dicionario["TotalMedio"])
 
-dados =\
+dados = \
     {
-    'Horario': listaHorarios,
-    'QuantidadeMedia': listaQuantidadeMedia,
-    'TotalMedio': listaTotalMedio
+        'Data': data_atual,
+        'Horario': listaHorarios,
+        'QuantidadeMedia': listaQuantidadeMedia,
+        'TotalMedio': listaTotalMedio
     }
 
 df = pd.DataFrame(dados)

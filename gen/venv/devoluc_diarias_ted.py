@@ -42,7 +42,6 @@ listaTotal = []
 anoInicial = 0
 anoAtual = datetime.now().year
 
-
 while (anoInicial < 2002) or (anoInicial > anoAtual):
     anoInicial = int(input("Insira o ano inicial da captura dos dados [2002-{}]...".format(anoAtual)))
 
