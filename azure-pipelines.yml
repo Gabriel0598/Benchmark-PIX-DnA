@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- master
 
 pool:
   vmImage: ubuntu-latest
@@ -20,4 +20,4 @@ steps:
 - task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
-    scriptPath: 'home/gen/venv/request_transc_24h.py'
+    scriptPath: '$(Build.SourcesDirectory)/home/gen/venv/request_transc_24h.py'
