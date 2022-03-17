@@ -23,10 +23,10 @@ steps:
     # scriptPath: '$(Build.SourcesDirectory)/home/gen/venv/request_transc_24h.py'
     # workingDirectory: '$(Build.SourcesDirectory)/home/gen/venv/request_transc_24h.py'
     script: pip install pandas as pd
-    script: pip install json
+    script2: pip install json
     displayName: 'Install tools'
     scriptSource: inline
-    script:
+    script3:
     # Importação das bibliotecas necessárias
 import os
 import csv
