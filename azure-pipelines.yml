@@ -20,4 +20,5 @@ steps:
 - task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
-    scriptPath: '$(Build.SourcesDirectory)/home/gen/venv/request_transc_24h.py'
+    # scriptPath: '$(Build.SourcesDirectory)/home/gen/venv/request_transc_24h.py'
+    workingDirectory: '$(Build.SourcesDirectory)/home/gen/venv/request_transc_24h.py'
