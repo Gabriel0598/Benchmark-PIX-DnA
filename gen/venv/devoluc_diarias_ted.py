@@ -43,7 +43,7 @@ anoInicial = 0
 anoAtual = datetime.now().year
 
 while (anoInicial < 2002) or (anoInicial > anoAtual):
-    anoInicial = int(input("Insira o ano inicial da captura dos dados [2002-{}]...".format(anoAtual)))
+    anoInicial = int(input("Insira o ano inicial da captura dos dados [2002-{}]: ".format(anoAtual)))
 
 for cadaLinha in arquivo_csv['value']:
     dicionario = ast.literal_eval(cadaLinha)  # converter string do value para dictionary
