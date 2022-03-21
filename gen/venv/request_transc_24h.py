@@ -8,6 +8,7 @@ from pip._vendor import requests
 from datetime import date
 import ast
 import datetime
+import psycopg2
 
 # URL da API do BACEN - Volume e valor total das transações realizadas nas últimas 24h;
 # Consulta inicial em 03/08/2022 as 09h17
